@@ -1,15 +1,11 @@
 {% import "blocks/block_text.njk" as block_text with context %}
 {% import "blocks/block_image.njk" as block_image with context %}
-{% import "blocks/widget_landing.njk" as widget_landing with context %}
-{% import "blocks/widget_form.njk" as widget_form with context %}
-{% import "blocks/widget_webgl.njk" as widget_webgl with context %}
+{% import "blocks/widget_towns.njk" as widget_towns with context %}
 
 {% set blocks = {
     "block_text": block_text,
     "block_image": block_image,
-    "widget_landing": widget_landing,
-    "widget_form": widget_form,
-    "widget_webgl": widget_webgl
+    "widget-towns": widget_towns
 } %}
 
 {% macro flexible(content) %}

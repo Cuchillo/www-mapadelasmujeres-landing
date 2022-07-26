@@ -1,5 +1,5 @@
 const acf_optionGetByLang = require('../_helpers/acf_optionGetByLang.js');
-const type = "team";
+const type = "town";
 
 async function getData(){
     console.log("------ Fetching team... ------ ");

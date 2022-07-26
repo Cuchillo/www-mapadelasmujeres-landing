@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: 'FKGrotesk-Regular';
   src:
     url('FKGrotesk-Regular.woff2') format('woff2'),
@@ -26,4 +26,40 @@
     font-weight: 200;
     font-style: italic;
     font-display: swap;
+}*/
+
+@font-face {
+  font-family: 'Migra';
+  src: url('Migra-Extralight.woff2') format('woff2'),
+      url('Migra-Extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Migra';
+  src: url('Migra-Extrabold.woff2') format('woff2'),
+      url('Migra-Extrabold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('HelveticaNeueBold.woff2') format('woff2'),
+      url('HelveticaNeueBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('HelveticaNeueMedium.woff2') format('woff2'),
+      url('HelveticaNeueMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }

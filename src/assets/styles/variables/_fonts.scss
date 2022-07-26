@@ -1,9 +1,11 @@
 @use "sass:math";
 
 :root {
-  --font-sans: 'FKGrotesk-Regular', sans-serif;
-  --font-sans-bold: 'FKGrotesk-Medium', sans-serif;
-  --font-sans-italic: 'FKGrotesk-ThinItalic', sans-serif;
+  --font-sans: 'HelveticaNeueMedium', sans-serif;//medium
+  --font-sans-bold: 'HelveticaNeueBold', sans-serif;//bold
+
+  --font-serif-bold: 'Migra-Extrabold', serif;//extra-bold
+  --font-serif-light: 'Migra-Extralight', serif;//extra-light
 
   --font-size-xxlarge: #{math.div(42px, 16px) * 1rem};
   --font-size-xlarge: #{math.div(36px, 16px) * 1rem};
@@ -43,10 +45,18 @@
   @if $line-height > 0 { line-height: $line-height  }
   @else { line-height: var(--line-height-sans);  }
 }
-@mixin font-sans-italic($line-height:0) {
-  font-family: var(--font-serif);
+
+@mixin font-serif-bold($line-height:0) {
+  font-family: var(--font-serif-bold);
+  font-weight: bold;
+  font-style: normal;
+  @if $line-height > 0 { line-height: $line-height  }
+  @else { line-height: var(--line-height-sans);  }
+}
+@mixin font-serif-light($line-height:0) {
+  font-family: var(--font-serif-light);
   font-weight: 200;
-  font-style: italic;
+  font-style: normal;
   @if $line-height > 0 { line-height: $line-height  }
   @else { line-height: var(--line-height-sans);  }
 }

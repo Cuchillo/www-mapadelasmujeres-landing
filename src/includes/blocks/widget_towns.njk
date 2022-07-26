@@ -1,0 +1,13 @@
+{% macro block(data) %}
+    <section class="widget-towns" scroll-item>
+        {% for town in towns %}
+            <div>
+                {{ town }}
+                <br>
+                {% for street in town.streets_list %}
+                    {{ street }}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </section>
+{% endmacro %}
