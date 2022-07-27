@@ -1,0 +1,49 @@
+@use "sass:math";
+
+.widget-towns {
+    --color: var(--secondary-color);
+    --color-title: var(--primary-color);
+    --bg: var(--primary-bg);
+    
+    --font-size: var(--font-size-s);
+    --font-size-title: var(--font-size-l);
+    --padding: var(--padding-s);
+}
+.widget-towns {
+    color: var(--color);
+    background-color: var(--bg);
+    padding: var(--padding);
+}
+
+.widget-towns__town {
+    > h3 {
+        @include font-serif-light();
+        font-size: var(--font-size-title);
+        color: var(--color-title);
+        margin: 1em 0 .2em;
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            b {
+                @include font-sans-bold();
+            }
+
+            display: inline;
+            @include font-sans();
+            font-size: var(--font-size);
+            margin: 0;
+
+            &.hide {
+                background-image: linear-gradient(var(--color), var(--color));
+                background-position: 0% 100%;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                word-break: break-all;
+            }
+        }
+    }
+}

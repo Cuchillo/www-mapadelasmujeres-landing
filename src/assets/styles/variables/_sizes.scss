@@ -2,15 +2,12 @@
 
 :root {
   --y-header: 0;
-
   --padding-xl: #{math.div(120px, 16px) * 1rem};
-  --padding-l: #{math.div(90px, 16px) * 1rem};
-  --padding-m: #{math.div(60px, 16px) * 1rem};
-  --padding-s: #{math.div(30px, 16px) * 1rem};
-  --padding-xs: #{math.div(15px, 16px) * 1rem};
+  --padding-l: #{math.div(60px, 16px) * 1rem};
+  --padding-m: #{math.div(44px, 16px) * 1rem};
+  --padding-s: #{math.div(32px, 16px) * 1rem};
+  --padding-xs: #{math.div(16px, 16px) * 1rem};
   --padding-xxs: #{math.div(8px, 16px) * 1rem};
-
-  --header-height:#{math.div(77px, 16px) * 1rem};
 }
 
 @media (max-width: $smartphone) {

@@ -1,15 +1,26 @@
 @use "sass:math";
 
 #Scrollbar {
-    --height: #{math.div(80px, 16px) * 1rem};
+    --bg: transparent;
+    --color: var(--primary-color);
+    --width: 4px;
+    --height: 100%;
+    --top:0;
+    --left:auto;
+    --bottom:auto;
+    --right:0;
+}
 
+#Scrollbar {
     position: fixed;
     @include z-index($z-index-scrollbar);
 
-    width: 100%;
+    width: var(--width);
     height: var(--height);
-    bottom: 0;
-    left: 0;
+    top: var(--top);
+    right: var(--right);
+    bottom: var(--bottom);
+    left: var(--left);
 
     .track,
     .thumb {
@@ -21,13 +32,13 @@
     }
 
     .track {
-        background-color: var(--primary-bg);
+        background-color: var(--bg);
     }
 
     .thumb {
         transform-origin: 0 0;
-        background-color: var(--primary-color);
-        transform: scale(0,1);
+        background-color: var(--color);
+        transform: scale(1,0);
     }
 
     @include isTouch() {

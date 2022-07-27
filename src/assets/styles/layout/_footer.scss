@@ -1,22 +1,15 @@
 #Footer {
-    --font-size: var(--font-size-small);
-    padding: var(--padding-s) var(--padding-xs) var(--padding-xl);
+    --font-size: var(--font-size-m);
+    padding: var(--padding-s);
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
 }
 
-#Footer > nav {
-    display: flex;
-    align-items: flex-end;
+#Footer {
+    @include font-serif-light();
+    font-size: var(--font-size);
 
-    a {
-        @include font-sans(1.2);
-        font-size: var(--font-size);
-        color: inherit;
-        margin: 0 1em;
+    b {
+        @include font-serif-bold();
     }
-}
-
-@media (max-width: $smartphone) {
-  #Footer {
-      --font-size: rem(12px);
-  }
 }
