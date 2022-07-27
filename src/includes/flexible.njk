@@ -1,10 +1,14 @@
 {% import "blocks/block_text.njk" as block_text with context %}
 {% import "blocks/block_image.njk" as block_image with context %}
+{% import "blocks/block_hero.njk" as block_hero with context %}
+{% import "blocks/widget_abc.njk" as widget_abc with context %}
 {% import "blocks/widget_towns.njk" as widget_towns with context %}
 
 {% set blocks = {
     "block_text": block_text,
     "block_image": block_image,
+    "block_hero-towns": block_hero,
+    "widget_abc": widget_abc,
     "widget-towns": widget_towns
 } %}
 
