@@ -1,22 +1,19 @@
 #Footer {
-    --font-size: var(--font-size-small);
-    padding: var(--padding-s) var(--padding-xs) var(--padding-xl);
-}
+    --font-size: var(--font-size-m);
+    padding: var(--padding-s);
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
 
-#Footer > nav {
-    display: flex;
-    align-items: flex-end;
-
-    a {
-        @include font-sans(1.2);
-        font-size: var(--font-size);
-        color: inherit;
-        margin: 0 1em;
+    @media (max-width: $smartphone) {
+        padding: var(--padding-s) var(--padding-xs);
     }
 }
 
-@media (max-width: $smartphone) {
-  #Footer {
-      --font-size: rem(12px);
-  }
+#Footer {
+    @include font-serif-light();
+    font-size: var(--font-size);
+
+    b {
+        @include font-serif-bold();
+    }
 }

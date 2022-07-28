@@ -1,0 +1,145 @@
+@use "sass:math";
+
+.widget-abc {
+    --color: var(--primary-color);
+    --color-deco: var(--secondary-color);
+    --color-indice: var(--secondary-bg);
+    --color-indice-title: var(--secondary-color);
+    --bg: var(--primary-bg);
+    
+    --font-size: var(--font-size-base);
+    --font-size-title: var(--font-size-xxl);
+    --font-size-indice: var(--font-size-xxl);
+    --font-size-deco: #{math.div(620px, 16px) * 1rem};
+
+    --border-deco: #{math.div(1px, 16px) * 1rem};
+    --padding-top: #{math.div(134px, 16px) * 1rem};
+    --padding: var(--padding-s);
+    --padding-indice: var(--padding-l);
+    --padding-mapa: #{math.div(250px, 16px) * 1rem};
+    --cols: 5;
+}
+.widget-abc {
+    color: var(--color);
+    background-color: var(--bg);
+    padding: var(--padding-top) var(--padding) var(--padding);
+    overflow: hidden;
+}
+
+.widget-abc > header {
+    position: relative;
+    @include font-serif-bold();
+
+    > .deco  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        
+        span {
+            color: var(--bg);
+            font-size: var(--font-size-deco);
+            -webkit-text-stroke: var(--border-deco) var(--color-deco);
+        }
+    }
+
+    h2 {
+        position: relative;
+        font-size: var(--font-size-title);
+        margin: 0 0 .5em 0;
+        text-transform: uppercase;
+
+        b {
+            color: var(--white);
+        }
+    }
+}
+
+.widget-abc__map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--padding-mapa);
+    min-height: 100vh;
+
+    svg {
+        fill: var(--color);
+        width: 100%;
+        height: auto;
+    }
+}
+
+.widget-abc__indice {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    list-style: none;
+    margin: 0;
+    padding: var(--padding-indice);
+
+    li > h3 {
+        @include font-serif-bold();
+        font-size: var(--font-size-title);
+        color: var(--color-indice-title);
+        margin: 0 0 .1em 0;
+    }
+
+    li > ul {
+        list-style: none;
+        
+
+        li {
+            @include font-sans();
+            color: var(--secondary-bg);
+            font-size: var(--font-size);
+            display: block;
+        }
+    }
+}
+
+@media (max-width: $smartphone) {
+    .widget-abc {
+        --font-size-title: var(--font-size-l);
+        --font-size-deco: #{math.div(170px, 16px) * 1rem};
+
+        --padding: var(--padding-xs);
+        --padding-top: var(--padding-s);
+
+        --cols: 1;
+    }
+
+    .widget-abc > header {
+        position: relative;
+        @include font-serif-bold();
+    
+        > .deco  {
+            top:85%;
+        }
+    }
+
+    .widget-abc__map {
+        padding: 0;
+        position: sticky;
+        top: 0px;
+    }
+
+    .widget-abc__indice {
+        padding: 0;
+        row-gap: var(--padding-indice);
+
+        li {
+            display: flex;
+            column-gap: 52px;
+            margin-top: -0.34em;
+        }
+        li > h3 {
+            font-size: 4rem;
+            min-width: 40px;
+        }
+    }
+    
+}

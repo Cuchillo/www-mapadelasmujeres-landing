@@ -14,6 +14,7 @@ module.exports = {
     split: (content,t1,t2) => content.split(t1).join(t2),
     replace: (text, st1, st2) => text.replace(st1, st2),
     slugify: (str) => str?.replace(/\s+/g, '-').toLowerCase(),
+    random: (content) => Math.floor(Math.random() * (content - 1 + 1)) + 1,
     half: (items) => {
         const temp = [...items];
         const half = Math.ceil(temp.length / 2);

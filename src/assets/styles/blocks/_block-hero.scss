@@ -1,0 +1,60 @@
+@use "sass:math";
+
+.block-hero {
+    --color: var(--primary-color);
+    --bg: var(--primary-bg);
+    --map-fill: var(--primary-color);
+    --dots-fill: var(--white);
+    --font-size: var(--font-size-xl);
+    --padding: var(--padding-s);
+    --padding-map-left: #{math.div(395px, 16px) * 1rem};
+    --padding-map-top: #{math.div(100px, 16px) * 1rem};
+}
+.block-hero {
+    color: var(--color);
+    background-color: var(--bg);
+    padding: var(--padding);
+}
+
+.block-hero > header {
+    position: absolute;
+    top: var(--padding);
+    left: var(--padding);
+
+    h1 {
+        @include font-serif-bold();
+        font-size: var(--font-size);
+        margin: 0;
+        text-transform: uppercase;
+    }
+}
+
+.block-hero__map {
+    position: relative;
+    padding-top: var(--padding-map-top);
+    padding-left: var(--padding-map-left);
+   
+    svg {
+        width: 100%;
+        height: auto;
+        .map path {
+            fill: var(--map-fill);
+        }
+        .dots path {
+            fill: var(--dots-fill);
+        }
+    }
+}
+
+@media (max-width: $smartphone) {
+    .block-hero {
+        --font-size: var(--font-size-l);
+
+        --padding-map-top: #{math.div(150px, 16px) * 1rem};
+        --padding: var(--padding-s) var(--padding-xs);
+    }
+
+    .block-hero__map {
+        padding-left: 0;
+    }
+}

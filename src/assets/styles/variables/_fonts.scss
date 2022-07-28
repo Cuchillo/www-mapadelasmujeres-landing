@@ -1,24 +1,26 @@
 @use "sass:math";
 
 :root {
-  --font-sans: 'FKGrotesk-Regular', sans-serif;
-  --font-sans-bold: 'FKGrotesk-Medium', sans-serif;
-  --font-sans-italic: 'FKGrotesk-ThinItalic', sans-serif;
+  --font-sans: 'HelveticaNeueMedium', sans-serif;//medium
+  --font-sans-bold: 'HelveticaNeueBold', sans-serif;//bold
 
-  --font-size-xxlarge: #{math.div(42px, 16px) * 1rem};
-  --font-size-xlarge: #{math.div(36px, 16px) * 1rem};
-  --font-size-large: #{math.div(32px, 16px) * 1rem};
-  --font-size-medium: #{math.div(28px, 16px) * 1rem};
-  --font-size-base: #{math.div(24px, 16px) * 1rem};
-  --font-size-small: #{math.div(20px, 16px) * 1rem};
-  --font-size-xsmall: #{math.div(18px, 16px) * 1rem};
-  --font-size-xxsmall: #{math.div(16px, 16px) * 1rem};
-  --font-size-xxxsmall: #{math.div(14px, 16px) * 1rem};
-  --font-size-xxxxsmall: #{math.div(12px, 16px) * 1rem};
-  --font-size-xxxxxsmall: #{math.div(8px, 16px) * 1rem};
+  --font-serif-bold: 'Migra-Extrabold', serif;//extra-bold
+  --font-serif-light: 'Migra-Extralight', serif;//extra-light
 
-  --line-height-sans: 1.2;
-  --letter-spacing: -0.06em;
+  --font-size-xxl: #{math.div(163px, 16px) * 1rem};
+  --font-size-xl: #{math.div(101px, 16px) * 1rem};
+  --font-size-l: #{math.div(70px, 16px) * 1rem};
+  --font-size-m: #{math.div(60px, 16px) * 1rem};
+  --font-size-base: #{math.div(22px, 16px) * 1rem};
+  --font-size-s: #{math.div(18px, 16px) * 1rem};
+  --font-size-xs: #{math.div(18px, 16px) * 1rem};
+  --font-size-xxs: #{math.div(16px, 16px) * 1rem};
+  --font-size-xxxs: #{math.div(14px, 16px) * 1rem};
+  
+
+  --line-height-sans: #{math.div(28, 18)};
+  --line-height-serif: #{math.div(142, 163)};
+  --letter-spacing: -0.01em;
 
   --min-font-size: 10px;
   --max-font-size: 48px;
@@ -28,25 +30,39 @@
 
   @media (max-width: $smartphone) {
     --font-size: 16px;
+    --font-size-l: #{math.div(45px, 16px) * 1rem};
+    --font-size-xxxs: #{math.div(11px, 16px) * 1rem};
   }
 }
 
 @mixin font-sans($line-height:0) {
   font-family: var(--font-sans);
   font-weight: normal;
+  letter-spacing: var(--letter-spacing);
   @if $line-height > 0 { line-height: $line-height  }
   @else { line-height: var(--line-height-sans);  }
 }
 @mixin font-sans-bold($line-height:0) {
   font-family: var(--font-sans-bold);
-  font-weight: 500;
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing);
   @if $line-height > 0 { line-height: $line-height  }
   @else { line-height: var(--line-height-sans);  }
 }
-@mixin font-sans-italic($line-height:0) {
-  font-family: var(--font-serif);
-  font-weight: 200;
-  font-style: italic;
+
+@mixin font-serif-bold($line-height:0) {
+  font-family: var(--font-serif-bold);
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: var(--letter-spacing);
   @if $line-height > 0 { line-height: $line-height  }
-  @else { line-height: var(--line-height-sans);  }
+  @else { line-height: var(--line-height-serif);  }
+}
+@mixin font-serif-light($line-height:0) {
+  font-family: var(--font-serif-light);
+  font-weight: 200;
+  font-style: normal;
+  letter-spacing: var(--letter-spacing);
+  @if $line-height > 0 { line-height: $line-height  }
+  @else { line-height: var(--line-height-serif);  }
 }

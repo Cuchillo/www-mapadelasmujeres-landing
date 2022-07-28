@@ -1,0 +1,102 @@
+@use "sass:math";
+
+.widget-towns {
+    --color: var(--secondary-color);
+    --color-title: var(--primary-color);
+    --bg: var(--primary-bg);
+    
+    --font-size: var(--font-size-s);
+    --font-size-title: var(--font-size-l);
+    --padding: var(--padding-s);
+}
+.widget-towns {
+    color: var(--color);
+    background-color: var(--bg);
+    padding: var(--padding);
+}
+
+.widget-towns__town {
+    > h3 {
+        @include font-serif-light();
+        font-size: var(--font-size-title);
+        color: var(--color-title);
+        margin: 1em 0 .2em;
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            b {
+                @include font-sans-bold();
+            }
+
+            display: inline;
+            @include font-sans();
+            font-size: var(--font-size);
+            margin: 0;
+
+            &.hide {
+
+                display: inline-block;
+                height: 1.3em;
+
+                background-image: linear-gradient(var(--color), var(--color));
+                background-position: 0% 100%;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                word-break: break-all;
+            }
+
+            &.size-1 {   width: 10em; }
+            &.size-2 {   width: 12em; }
+            &.size-3 {   width: 16em; }
+            &.size-4 {   width: 18em; }
+            &.size-5 {   width: 20em; }
+            &.size-6 {   width: 21em; }
+            &.size-7 {   width: 22em; }
+            &.size-8 {  width: 24em; }
+            &.size-9 {   width: 26em; }
+            &.size-10 {   width: 30em; }
+        }
+    }
+}
+
+@media (max-width: $smartphone) {
+    .widget-towns {
+        --font-size: var(--font-size-xxxs);
+        --font-size-title: var(--font-size-l);
+
+        --padding: var(--padding-xs);
+    }
+
+    .widget-towns__town {
+        > h3 {
+            margin: 1em 0 .25em 0;
+        }
+
+        > ul {
+            margin: 0;
+            padding: 0;
+
+            &.hide {
+
+                height: 1.1em;
+            }
+
+            li {
+                &.size-1 {   width: 21%; }
+                &.size-2 {   width: 24%; }
+                &.size-3 {   width: 32%; }
+                &.size-4 {   width: 39%; }
+                &.size-5 {   width: 42%; }
+                &.size-6 {   width: 47%; }
+                &.size-7 {  width: 53%; }
+                &.size-8 {   width: 58%; }
+                &.size-9 {   width: 65%; }
+                &.size-10 {   width: 70%; }
+            }
+        }
+    }
+}

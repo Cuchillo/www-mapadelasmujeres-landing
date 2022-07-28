@@ -1,0 +1,29 @@
+{% import "../svg/map.njk" as map with context %}
+
+{% macro block(data) %}
+
+<section class="widget-abc palette-secondary" scroll-item>
+    <header>
+        <span class="deco" data-scroll-insider data-speed="-.2"><span>4,6%</span></span>
+        <h2>{{ data.title_es | safe }}</h2>
+    </header>
+
+    <div class="widget-abc__map" data-scroll-sticky>
+        {{ map.block() }}
+    </div>
+
+    <ul class="widget-abc__indice">
+        {% for item in townsABC %}
+        <li>
+            <h3>{{ item.letter }}</h3>
+            <ul>
+            {% for town in item.towns %}
+                <li>{{ town }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endmacro %}

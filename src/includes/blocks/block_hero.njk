@@ -1,0 +1,15 @@
+{% import "../svg/map_with_dots.njk" as map with context %}
+
+{% macro block(data) %}
+
+<section class="block-hero palette-primary" scroll-item>
+    <header>
+        <h1>{{ data.title_es | safe }}</h1>
+    </header>
+
+    <div class="block-hero__map">
+         {{ map.block() }}
+    </div>
+</section>
+
+{% endmacro %}

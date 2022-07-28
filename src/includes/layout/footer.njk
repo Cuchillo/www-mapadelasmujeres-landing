@@ -1,24 +1,8 @@
-<Footer id="Footer" scroll-item>
-    <nav>
-        {# RRSS #}
-        {% if contact[renderData.language].rrss %}
-            <div>
-                {% for item in contact[renderData.language].rrss %}
-                    <a class="link" href="{{ item.url }}" rel="nofollow" target='_blank'><span>{{ item.text }}</span></a>
-                {% endfor %}
-            </div>
-        {% endif %}
+<Footer id="Footer" class="palette-primary" scroll-item>
+    <b>Emakumeen kaleak</b> Las calles de las mujeres
 
-        {# CONTACT INFO #}
-        {% if contact[renderData.language].contact %}
-            <div>
-                {% for item in contact[renderData.language].contact %}
-                    <a href="{{ item.url }}" rel="nofollow"><span>{{ item.text }}</span></a>
-                {% endfor %}
-            </div>
-        {% endif %}
 
-        {# LEGALES #}
+        {# LEGALES 
         {% if all[renderData.language].legales %}
             <div>
                 {% for item in all[renderData.language].legales %}
@@ -26,16 +10,5 @@
                     <a class="link-arrow {{ activeClass }}" href="{{ item.link }}" rel="nofollow"><span>{{ item.title.rendered }}</span></a>
                 {% endfor %}
             </div>
-        {% endif %}
-
-        {# LANGS #}
-        {% if locales.langs %}
-            <div>
-                {% for lang in locales.langs %}
-                    {% set activeClass = "is-active" if lang.code == locale else "" %}
-                    <a class="link-arrow {{ activeClass }}" href="{{ lang.url }}" data-internal><span>{{ lang.label }}</span></a>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </nav>
+        {% endif %} #}
 </Footer>
