@@ -38,12 +38,27 @@
             margin: 0;
 
             &.hide {
+
+                display: inline-block;
+                height: 1.3em;
+
                 background-image: linear-gradient(var(--color), var(--color));
                 background-position: 0% 100%;
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 word-break: break-all;
             }
+
+            &.size-1 {   width: 10em; }
+            &.size-2 {   width: 12em; }
+            &.size-3 {   width: 16em; }
+            &.size-4 {   width: 18em; }
+            &.size-5 {   width: 20em; }
+            &.size-6 {   width: 21em; }
+            &.size-7 {   width: 22em; }
+            &.size-8 {  width: 24em; }
+            &.size-9 {   width: 26em; }
+            &.size-10 {   width: 30em; }
         }
     }
 }

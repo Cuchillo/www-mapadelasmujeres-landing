@@ -5,7 +5,13 @@
             <h3>{{ item.town | safe }}</h3>
             <ul>
                 {% for street in item.streets %}
-                    <li class={{ street.class }}><b>_{{ loop.index }}_</b>{{ street.text }}</li>
+                    {% set text = street.text %}
+                    {% if street.class == "hide" %}
+                        <li class="{{ street.class }} size-{{ 10 | random }}"></li>
+                    {% else %}
+                        <li class={{ street.class }}><b>_{{ loop.index }}_</b>{{ street.text }}</li>
+                    {% endif %}
+                    
                 {% endfor %}
             </ul>
         </div>
