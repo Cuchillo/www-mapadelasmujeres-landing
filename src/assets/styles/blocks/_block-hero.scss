@@ -45,3 +45,16 @@
         }
     }
 }
+
+@media (max-width: $smartphone) {
+    .block-hero {
+        --font-size: var(--font-size-l);
+
+        --padding-map-top: #{math.div(150px, 16px) * 1rem};
+        --padding: var(--padding-s) var(--padding-xs);
+    }
+
+    .block-hero__map {
+        padding-left: 0;
+    }
+}

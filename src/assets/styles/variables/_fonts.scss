@@ -30,6 +30,8 @@
 
   @media (max-width: $smartphone) {
     --font-size: 16px;
+    --font-size-l: #{math.div(45px, 16px) * 1rem};
+    --font-size-xxxs: #{math.div(11px, 16px) * 1rem};
   }
 }
 
