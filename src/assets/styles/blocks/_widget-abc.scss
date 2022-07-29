@@ -80,6 +80,8 @@
     list-style: none;
     margin: 0;
     padding: var(--padding-indice);
+    column-gap: var(--padding-xxs);
+    row-gap: var(--padding-l);
 
     li > h3 {
         @include font-serif-bold();
