@@ -15,15 +15,14 @@ class ScrollItem__ABC extends VScroll_Item {
     super(__link, __index, __scroller);
 
     this._number = GetBy.selector('.__title b', __link)[0];
-
-    this._number.innerHTML = '0';
     this._target = { val: 0 };
-
-    this.opts.offsetShow = window.innerHeight * .5;
-
+    
+    this.opts.offsetShow = window.innerHeight * .75;
+    
     this.onShow = () => {
-
-      console.log('Show', this.opts.offsetShow);
+      
+      const { width } = this._number.getBoundingClientRect();
+      this._number.style = 'display: inline-block; width: ' + width + 'px';
 
       gsap.to(this._target, {
         val: 4.6,
@@ -32,6 +31,9 @@ class ScrollItem__ABC extends VScroll_Item {
         ease: Power4.easeInOut,
         onUpdate: () => {
           this._number.innerHTML = `${this._target.val.toFixed(1)}%`.replace('.', ',');
+        },
+        onComplete: () => {
+          this._number.style = '';
         }
       });
     };
