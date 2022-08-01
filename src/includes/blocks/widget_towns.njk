@@ -1,7 +1,7 @@
 {% macro block(data) %}
     <section class="widget-towns palette-secondary">
         {% for item in towns %}
-        <div id="{{ item.town }}" class="widget-towns__town" scroll-item>
+        <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item>
             <h3>{{ item.town | safe }}</h3>
             <ul>
                 {% for street in item.streets %}

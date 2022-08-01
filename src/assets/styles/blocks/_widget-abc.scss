@@ -96,9 +96,13 @@
 
         li {
             @include font-sans();
-            color: var(--secondary-bg);
             font-size: var(--font-size);
             display: block;
+            
+            a {
+                @include basic-a();
+                color: var(--secondary-bg);
+            }
         }
     }
 }

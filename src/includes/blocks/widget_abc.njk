@@ -17,9 +17,11 @@
         <li>
             <h3>{{ item.letter }}</h3>
             <ul>
-            {% for town in item.towns %}
-                <li>{{ town }}</li>
-            {% endfor %}
+                {% for town in item.towns %}
+                    <li>
+                        <a href="#{{ town|slugify }}" data-anchor>{{ town }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </li>
         {% endfor %}
