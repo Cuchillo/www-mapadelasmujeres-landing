@@ -36,6 +36,7 @@ import Cookies from './windows/Cookies';
 
 import { ScrollItem__SliderScrollHorizontal } from './scroll/ScrollItem__SliderScrollHorizontal';
 import { ScrollItem__ABC } from './scroll/ScrollItem__ABC';
+import { ScrollItem__Town } from './scroll/ScrollItem__Town';
 import WinSidemenu from "./windows/Sidemenu";
 import { isThisSecond } from "date-fns";
 

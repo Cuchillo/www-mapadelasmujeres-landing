@@ -38,11 +38,31 @@
             @include font-sans();
             font-size: var(--font-size);
             margin-bottom: em(5);
-            margin-right: em(10);
+            margin-right: em(5);
+            position: relative;
 
             a {
                 @include basic-a();
                 color: var(--color);
+                color: var(--color);
+            }
+            
+            &.show::before {
+                @include z-index(1);
+                background-color: var(--color);
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transform: scale3d(1, 1, 1);
+                transform-origin: right center;
+                transition: transform 1.5s var(--ease-in-out-expo);
+                width: 100%;
+            }
+
+            &.animated.show::before {
+                transform: scale3d(0, 1, 1);
             }
 
             &.hide {
@@ -55,7 +75,6 @@
                 background-repeat: no-repeat;
                 word-break: break-all;
                 flex-grow: 1;
-                margin-right: em(5);
             }
 
             &.size-1 { width: 8em; }

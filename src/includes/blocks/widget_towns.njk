@@ -1,24 +1,23 @@
 {% macro block(data) %}
     <section class="widget-towns palette-secondary">
         {% for item in towns %}
-        <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item>
-            <h3>{{ item.town | safe }}</h3>
-            <ul>
-                {% for street in item.streets %}
-                    {% set text = street.text %}
-                    {% if street.class == "hide" %}
-                        <li class="{{ street.class }} size-{{ 10|random }}"></li>
-                    {% else %}
-                        <li class={{ street.class }}>
-                            <a href="{{ 'https://www.google.com/maps/place/' + street.text|slugify('+') ~ '+' ~ item.town|slugify }}" target="_blank" rel="nofollow">
-                                <b>_{{ loop.index }}_</b>{{ street.text }}
-                            </a>
-                        </li>
-                    {% endif %}
-                    
-                {% endfor %}
-            </ul>
-        </div>
-         {% endfor %}
+            <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
+                <h3>{{ item.town | safe }}</h3>
+                <ul>
+                    {% for street in item.streets %}
+                        {% set text = street.text %}
+                        {% if street.class == "hide" %}
+                            <li class="{{ street.class }} size-{{ 10|random }}"></li>
+                        {% else %}
+                            <li class={{ street.class }}>
+                                <a href="{{ 'https://www.google.com/maps/place/' + street.text|slugify('+') ~ '+' ~ item.town|slugify }}" target="_blank" rel="nofollow">
+                                    <b>_{{ loop.index }}_</b>{{ street.text }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
     </section>
 {% endmacro %}
