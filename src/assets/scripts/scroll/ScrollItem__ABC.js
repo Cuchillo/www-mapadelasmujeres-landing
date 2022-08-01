@@ -19,7 +19,7 @@ class ScrollItem__ABC extends VScroll_Item {
     this._number.innerHTML = '0';
     this._target = { val: 0 };
 
-    this.opts.offsetShow = window.innerHeight * .75;
+    this.opts.offsetShow = window.innerHeight * .5;
 
     this.onShow = () => {
 
@@ -27,7 +27,7 @@ class ScrollItem__ABC extends VScroll_Item {
 
       gsap.to(this._target, {
         val: 4.6,
-        duration: 2, 
+        duration: 2.5, 
         roundProps: 'd',
         ease: Power4.easeInOut,
         onUpdate: () => {
