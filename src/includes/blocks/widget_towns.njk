@@ -7,9 +7,13 @@
                 {% for street in item.streets %}
                     {% set text = street.text %}
                     {% if street.class == "hide" %}
-                        <li class="{{ street.class }} size-{{ 10 | random }}"></li>
+                        <li class="{{ street.class }} size-{{ 10|random }}"></li>
                     {% else %}
-                        <li class={{ street.class }}><b>_{{ loop.index }}_</b>{{ street.text }}</li>
+                        <li class={{ street.class }}>
+                            <a href="{{ 'https://www.google.com/maps/place/' + street.text|slugify('+') ~ '+' ~ item.town|slugify }}" target="_blank" rel="nofollow">
+                                <b>_{{ loop.index }}_</b>{{ street.text }}
+                            </a>
+                        </li>
                     {% endif %}
                     
                 {% endfor %}

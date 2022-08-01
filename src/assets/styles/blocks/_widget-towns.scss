@@ -37,9 +37,13 @@
             display: inline;
             @include font-sans();
             font-size: var(--font-size);
-            // margin: 0;
             margin-bottom: em(5);
-            margin-right: em(5);
+            margin-right: em(10);
+
+            a {
+                @include basic-a();
+                color: var(--color);
+            }
 
             &.hide {
                 display: inline-block;
@@ -50,9 +54,11 @@
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 word-break: break-all;
+                flex-grow: 1;
+                margin-right: em(5);
             }
 
-            &.size-1 { width: 10em; }
+            &.size-1 { width: 8em; }
             &.size-2 { width: 12em; }
             &.size-3 { width: 16em; }
             &.size-4 { width: 18em; }
