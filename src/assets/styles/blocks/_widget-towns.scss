@@ -105,24 +105,17 @@
         }
 
         > ul {
-            margin: 0;
-            padding: 0;
-
-            &.hide {
-                height: 1.1em;
-            }
-
             li {
-                &.size-10 {   width: 21%; }
-                &.size-2 {   width: 24%; }
-                &.size-4 {   width: 32%; }
-                &.size-6 {   width: 39%; }
-                &.size-5 {   width: 42%; }
-                &.size-7 {   width: 47%; }
-                &.size-9 {  width: 53%; }
-                &.size-8 {   width: 58%; }
-                &.size-3 {   width: 65%; }
                 &.size-1 {   width: 70%; }
+                &.size-2 {   width: 24%; }
+                &.size-3 {   width: 65%; }
+                &.size-4 {   width: 32%; }
+                &.size-5 {   width: 42%; }
+                &.size-6 {   width: 39%; }
+                &.size-7 {   width: 47%; }
+                &.size-8 {   width: 58%; }
+                &.size-9 {  width: 53%; }
+                &.size-10 {   width: 15%; }
             }
         }
     }
