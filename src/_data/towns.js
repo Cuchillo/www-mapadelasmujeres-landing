@@ -17,67 +17,68 @@ const temp =
 '603_LEGENDIKAKO ANDRA MARIA ELIZA / IGLESIA DE SANTA MARÍA DE LEGENDIKA_TRUCIOS - TURTZIOZ_604_KARITATEKO ANDRA MARIAREN BASELIZA / ERMITA DE NUESTRA SEÑORA DE LA CARIDAD_UBIDE_605_BARRIO MADALEN AUZOA_UGAO - MIRABALLES_606_UDIARRAGAKO AMA BIRJINAREN BASELIZA / ERMITA DE LA VIRGEN DE UDARRIAGA_URDULIZ_607_PLAZA BENDEJEREN PLAZA_608_PLAZA EUSEBIA FELISA ASKOBERETA PLAZA_609_CALLE LUISA LEIVAR KALEA_610_PARQUE ANDRA MARI PARKEA_611_PLAZA SANTA MARIÑE PLAZA_612_IGLESIA DE SANTA MARÍA ELIZA_613_ERMITA DE SANTA MARINA BASELIZA_URDUÑA - ORDUÑA_614_PLAZA ANDRA MARI PLAZA_615_BARRIO LA ANTIGUA AUZOA_616_PASEO LA ANTIGUA PASEALEKUA_617_BARRIO LA MARQUESA AUZOA_618_CALLE MARIA DOLORES MADARIA KALEA_619_PLAZA MONASTERIO SANTA CLARA PLAZA_620_CAMINO RITA CANTERA BIDEA_621_BARRIO SANTA CLARA AUZOA_622_BARRIO SANTA CRISTINA AUZOA_623_IGLESIA DE SANTA MARÍA ELIZA_624_ANTIGUAKO ANDRA MARIAREN SANTUTEGIA / SANTUARIO DE LA ANTIGUA_625_URDUÑAKO AMA BIRJI- NAREN ERMITA / ERMITA DE LA VIRGEN DE ORDUÑA_626_MONASTERIO SANTA CLARA MONASTERIOA_627_CPEIPS NTRA. SRA. DE LA ANTIGUA HLBHIP_VALLE DE TRAPAGA - TRAPAGARAN_628_CALLE DOLORES IBARRURI KALEA_629_CALLE LEONOR ELÍAS KALEA_630_CALLE MARÍA MAGDALENA KALEA_631_IGLESIA SANTA MARIA MAGDALENA ELIZA_ZALDIBAR_632_CALLE MIREN MAORTUA KALEA_633_CALLE SANTA ISABEL KALEA_ZALLA_634_PLAZA CAROLINA RENOBALES ENPARANTZA_635_BARRIO EL CARMEN AUZOA_636_BARRIO LA INMACULADA AUZOA_637_BARRIO LA MAGDALENA AUZOA_638_PLAZA MADRES IRLANDESAS PLAZA_639_CALLE MAESTRA CONSUELO ROBREDO KALEA_639_CALLE NUESTRA SEÑORA DEL ROSARIO KALEA_640_ERMITA DE SANTA ANA DE BOLUNBURU BASELIZA_641_ERMITA DE LA MAGDALENA BASELIZA_642_IGLESIA DE SANTA ISABEL ELIZA_643_ SORTZEZ GARBIAREN ELIZA / IGLESIA DE LA INMACULADA CONCEPCIÓN_ZAMUDIO_644_CALLE CARMEN MENDIGUREN ABAUNZA KALEA_645_CALLE ENARA KALEA_ZARATAMO_646_GRUPO SANTA BARBARA ETXETALDEA_647_BURBUSTUKO IGOKUNDEAREN BASELIZA / ERMITA DE LA ASCENSIÓN DE BURBUSTU_ZEANURI_648_IGLESIA ANDRA MARI ELIZA_649_ERMITA SANTA LUZIA BASELIZA_650_ERMITA SANTA AGUEDA BASELIZA_651_EDURRETAKO ANDRA MARIA BASELIZA / ERMITA DE NUESTRA SEÑORA DE LAS NIEVES_652_PIE- TATEAREN BASELIZA / ERMITA DE LA PIEDAD_ZEBERIO_653_CANTÓN MAURIZIA ALDEITURRIAGA KANTOIA_654_ZEBERIOGANEKO ANDRA MARI SANTUTEGIA / SANTUARIO DE NUESTRA SEÑORA DE ZEBERIOGANA_655_ASENTZIOA EDO IGOKUNDEAREN BASELIZA / ERMITA DE LA ASCENSIÓN_ZIERBENA_'+
 '656_CALLE VIRGEN DEL PUERTO KALEA_657_ERMITA DE NUESTRA SEÑORA VIRGEN DEL PUERTO BASELIZA_ZIORTZA - BOLIBAR_658_SANTA MARIA ZIORTZAKO MONASTEGIA / MONASTERIO DE SANTA MARÍA DE ZENARRUZA_659_ERMITA DE SANTA MARIA MAGDALENA DE ZEINKA-ZEARREGI BASELIZA_660_COROMOTOKO ANDRA MARIREN KAPERA / CAPILLA DE NUESTRA SEÑORA DEL COROMOTO';
 
-    const data = temp.split("_");      
-    data.push("B")
-    const towns = []
-    const abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    let town = "";
-    let isStreet = true;
-    let cont = -1;
+const data = temp.split("_");      
+data.push("B")
+const towns = []
+const abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let town = "";
+let isStreet = true;
+let cont = -1;
 
+getRandomWord = () => {
+    const n = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+    let s = "";
 
-    getRandomWord = () => {
-        const n = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
-        let s = "";
-
-        for(let i=0; i<n; i++) {
-            s = abc[Math.floor(Math.random() * abc.length)].toUpperCase() + s;
-        }
-
-        return s;
+    for(let i=0; i<n; i++) {
+        s = abc[Math.floor(Math.random() * abc.length)].toUpperCase() + s;
     }
-    
-    for(let i=0; i<data.length; i++) {
-        if(isStreet && isNaN(data[i])) {
-            if(cont >= 0) {
-                const n = Math.floor((towns[cont].streets.length*100)/4.6);
-                const empty = []
 
-                for(let j=0; j<n; j++) {
-                    empty.push({text:getRandomWord(),class:"hide"});
-                }
+    return s;
+}
 
-                towns[cont].streets = [...towns[cont].streets, ...empty].sort((a, b) => {
-                    let fa = a.text.toLowerCase(),
-                        fb = b.text.toLowerCase();
-                
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
+for (let i = 0; i < data.length; i++) {
+    if(isStreet && isNaN(data[i])) {
+        if(cont >= 0) {
+            const n = Math.floor((towns[cont].streets.length * 100) / 4.6);
+            const empty = []
+
+            for(let j=0; j<n; j++) {
+                empty.push({text:getRandomWord(),class:"hide"});
             }
 
-            isStreet = false;
-            town = data[i];
+            towns[cont].streets = [...towns[cont].streets, ...empty].sort((a, b) => {
+                let fa = a.text.toLowerCase(),
+                    fb = b.text.toLowerCase();
+            
+                if (fa < fb) {
+                    return -1;
+                }
 
-            if(town==="B") break;
+                if (fa > fb) {
+                    return 1;
+                }
 
-            towns.push({
-                town: town.trim(),
-                streets: []
+                return 0;
             });
-            cont = towns.length - 1;
-        } else if(!isNaN(data[i])){
-            isStreet = false;
-        } else {
-            isStreet = true;
-            towns[cont].streets.push({text:data[i].trim(),class:"show"});
         }
+
+        isStreet = false;
+        town = data[i];
+
+        if (town === "B") break;
+
+        towns.push({
+            town: town.trim(),
+            streets: []
+        });
+        cont = towns.length - 1;
+    } else if (!isNaN(data[i])) {
+        isStreet = false;
+    } else {
+        isStreet = true;
+        towns[cont].streets.push({ text:data[i].trim(), class: "show" });
     }
+}
 
 
 module.exports = towns;

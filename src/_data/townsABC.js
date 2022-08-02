@@ -5,14 +5,16 @@ const abc = [{letter:letter, towns:[]}];
 
 for(let i=0; i<towns.length; i++) {
     const newTown = towns[i].town.trim();
+    const nStreets = towns[i].streets.filter(street => street.class === 'show').length;
     const newLetter = newTown.charAt(0).toUpperCase();
-    if(letter != newLetter) {
+
+    if (letter != newLetter) {
         letter = newLetter;
         cont++;
-        abc.push({letter:letter, towns:[]});
+        abc.push({ letter: letter, towns: [] });
     }
 
-    abc[cont].towns.push(newTown);
+    abc[cont].towns.push({ name: newTown, streets: nStreets });
 }
 
 module.exports = abc;
