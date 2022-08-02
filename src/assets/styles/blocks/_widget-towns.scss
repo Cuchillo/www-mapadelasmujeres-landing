@@ -7,6 +7,7 @@
     
     --font-size: var(--font-size-s);
     --font-size-title: var(--font-size-l);
+    --font-size-number: var(--font-size-medium);
     --padding: var(--padding-s);
 }
 .widget-towns {
@@ -17,16 +18,28 @@
 
 .widget-towns__town {
     > h3 {
-        @include font-serif-light();
-        font-size: var(--font-size-title);
+        align-items: flex-end;
         color: var(--color-title);
+        display: flex;
+        justify-content: space-between;
         padding: 1em 0 .2em;
+
+        span:first-child {
+            @include font-serif-light();
+            font-size: var(--font-size-title);
+        }
+
+        span:last-child {
+            @include font-sans-bold();
+            font-size: var(--font-size-number);
+        }
     }
 
     > ul {
         display: flex;
         flex-wrap: wrap;
         margin: 0;
+        margin-right: em(-5);
         padding: 0;
 
         li {

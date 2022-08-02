@@ -37,13 +37,14 @@ getRandomWord = () => {
 }
 
 for (let i = 0; i < data.length; i++) {
-    if(isStreet && isNaN(data[i])) {
-        if(cont >= 0) {
+    if (isStreet && isNaN(data[i])) {
+        if (cont >= 0) {
             const n = Math.floor((towns[cont].streets.length * 100) / 4.6);
-            const empty = []
+            const empty = [];
 
-            for(let j=0; j<n; j++) {
-                empty.push({text:getRandomWord(),class:"hide"});
+            for (let j = 0; j < n; j++) {
+                empty.push({ text: getRandomWord(), class: "hide" });
+                towns[cont].hide++;
             }
 
             towns[cont].streets = [...towns[cont].streets, ...empty].sort((a, b) => {
@@ -69,7 +70,9 @@ for (let i = 0; i < data.length; i++) {
 
         towns.push({
             town: town.trim(),
-            streets: []
+            streets: [],
+            show: 0,
+            hide: 0
         });
         cont = towns.length - 1;
     } else if (!isNaN(data[i])) {
@@ -77,6 +80,7 @@ for (let i = 0; i < data.length; i++) {
     } else {
         isStreet = true;
         towns[cont].streets.push({ text:data[i].trim(), class: "show" });
+        towns[cont].show++;
     }
 }
 

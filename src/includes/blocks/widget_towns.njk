@@ -2,7 +2,10 @@
     <section class="widget-towns palette-secondary">
         {% for item in towns %}
             <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
-                <h3>{{ item.town | safe }}</h3>
+                <h3>
+                    <span>{{ item.town | safe }}</span>
+                    <span>{{ item.show }} / {{ item.hide }}</span>
+                </h3>
                 <ul>
                     {% for street in item.streets %}
                         {% set text = street.text %}
