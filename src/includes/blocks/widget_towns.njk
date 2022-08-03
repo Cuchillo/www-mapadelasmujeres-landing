@@ -13,7 +13,7 @@
                             <li class="{{ street.class }} size-{{ 10|random }}"></li>
                         {% else %}
                             <li class={{ street.class }}>
-                                <a href="{{ 'https://www.google.com/maps/place/' + street.text|slugify('+') ~ '+' ~ item.town|slugify }}" target="_blank" rel="nofollow">
+                                <a href="{{ street.link }}" target="_blank" rel="nofollow">
                                     <b>_{{ loop.index }}_</b>{{ street.text }}
                                 </a>
                             </li>
