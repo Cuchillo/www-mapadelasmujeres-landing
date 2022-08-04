@@ -19,6 +19,7 @@
     --padding-mapa: #{math.div(250px, 16px) * 1rem};
     --cols: 5;
 }
+
 .widget-abc {
     color: var(--color);
     background-color: var(--bg);
@@ -28,8 +29,8 @@
 }
 
 .widget-abc > header {
-    position: relative;
     @include font-serif-bold();
+    position: relative;
 
     > .deco  {
         display: flex;

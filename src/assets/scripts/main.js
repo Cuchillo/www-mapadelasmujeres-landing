@@ -39,6 +39,7 @@ import { ScrollItem__ABC } from './scroll/ScrollItem__ABC';
 import { ScrollItem__Town } from './scroll/ScrollItem__Town';
 import WinSidemenu from "./windows/Sidemenu";
 import { isThisSecond } from "date-fns";
+import ScrollTop from "./modules/ScrollTop";
 
 export default class Main {
 
@@ -70,6 +71,8 @@ export default class Main {
     LoaderController.onComplete = () => Main.setup();
     // LoaderController.update = progress => {  };
     LoaderController.init();
+
+    ScrollTop.init();
 
     this.doCuchilloInfo();
     this.setWorker();
