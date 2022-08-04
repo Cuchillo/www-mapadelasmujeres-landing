@@ -17,7 +17,7 @@
                         {% for town in item.towns %}
                             <li>
                                 <a href="#{{ town.name|slugify }}" data-anchor>
-                                    {{ town.name }} ({{ town.streets }})
+                                    {{ town.name }}
                                 </a>
                             </li>
                         {% endfor %}
