@@ -1,5 +1,5 @@
 {% macro block(data) %}
-    <section class="widget-towns palette-secondary">
+    <section id="widget-towns" class="widget-towns palette-secondary">
         {% for item in towns %}
             <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
                 <h3>

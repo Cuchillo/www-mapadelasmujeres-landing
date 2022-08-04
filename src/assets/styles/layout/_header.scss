@@ -26,7 +26,7 @@
     color: var(--color);
     background-color: var(--bg);
 
-    transform: translate3d(0, var(--y-header), 10px);
+    transform: translate3d(0, var(--y-header), #{$z-index-header}px);
 }
 
 #Header > nav {

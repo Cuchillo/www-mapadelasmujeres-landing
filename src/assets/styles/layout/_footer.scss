@@ -13,6 +13,8 @@
     padding: var(--padding-xs) var(--padding-s);
     position: fixed;
     width: 100%;
+
+    transform: translate3d(0, calc(-1 * var(--y-header)), #{$z-index-header}px);
     
     @media (max-width: $smartphone) {
         align-items: flex-end;
