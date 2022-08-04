@@ -1,0 +1,9 @@
+.scroll-top {
+    @include basic-a();
+    @include font-sans-medium();
+
+    background-color: transparent;
+    font-size: var(--font-size-s);
+    padding: 0;
+    text-transform: uppercase;
+}

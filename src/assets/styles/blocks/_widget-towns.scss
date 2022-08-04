@@ -30,7 +30,7 @@
         }
 
         span:last-child {
-            @include font-sans-bold();
+            @include font-sans-medium();
             font-size: var(--font-size-number);
         }
     }
@@ -44,7 +44,7 @@
 
         li {
             b {
-                @include font-sans-bold();
+                @include font-sans-medium();
             }
 
             display: inline;

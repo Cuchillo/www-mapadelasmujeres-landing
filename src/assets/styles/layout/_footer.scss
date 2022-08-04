@@ -6,6 +6,8 @@
     background-color: var(--primary-color);
     bottom: 0;
     color: var(--primary-bg);
+    display: flex;
+    justify-content: space-between;
     font-size: var(--font-size);
     left: 0;
     padding: var(--padding-xs) var(--padding-s);
@@ -13,15 +15,16 @@
     width: 100%;
     
     @media (max-width: $smartphone) {
+        align-items: flex-end;
         padding: var(--padding-xs);
+    }
+
+    div {
+        align-items: center;
+        display: flex; 
     }
 
     b {
         @include font-serif-bold();
     }
 }
-
-
-//  --map-green:#178C75;
-//   --map-orange:#F95F5F;
-//   --map-purple:#C8BBFC;

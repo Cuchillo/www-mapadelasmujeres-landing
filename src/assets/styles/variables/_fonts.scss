@@ -2,7 +2,7 @@
 
 :root {
   --font-sans: 'HelveticaNeueMedium', sans-serif;//medium
-  --font-sans-bold: 'HelveticaNeueBold', sans-serif;//bold
+  --font-sans-medium: 'HelveticaNeueBold', sans-serif;//bold
 
   --font-serif-bold: 'Migra-Extrabold', serif;//extra-bold
   --font-serif-light: 'Migra-Extralight', serif;//extra-light
@@ -12,7 +12,6 @@
   --font-size-l: #{math.div(70px, 16px) * 1rem};
   --font-size-m: #{math.div(60px, 16px) * 1rem};
   --font-size-medium: #{math.div(35px, 16px) * 1rem};
-  // --font-size-base-plus: #{math.div(26px, 16px) * 1rem};
   --font-size-base: #{math.div(22px, 16px) * 1rem};
   --font-size-s: #{math.div(18px, 16px) * 1rem};
   --font-size-xs: #{math.div(18px, 16px) * 1rem};
@@ -44,8 +43,8 @@
   @if $line-height > 0 { line-height: $line-height  }
   @else { line-height: var(--line-height-sans);  }
 }
-@mixin font-sans-bold($line-height:0) {
-  font-family: var(--font-sans-bold);
+@mixin font-sans-medium($line-height:0) {
+  font-family: var(--font-sans-medium);
   font-weight: 500;
   letter-spacing: var(--letter-spacing);
   @if $line-height > 0 { line-height: $line-height  }
