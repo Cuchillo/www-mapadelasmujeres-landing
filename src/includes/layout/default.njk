@@ -15,10 +15,11 @@
     <main id='Main'>
         <div class='wrap'>
             {{ content | safe }}
-            {# FOOTER #}
-            {% include "layout/footer.njk" %}
         </div>
     </main>
+    
+    {# FOOTER #}
+    {% include "layout/footer.njk" %}
 
     {# SCROLLBAR #}
     {% include "layout/scrollbar.njk" %}

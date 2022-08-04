@@ -1,14 +1,5 @@
-<Footer id="Footer" class="palette-primary" scroll-item>
-    <b>Emakumeen kaleak</b> Las calles de las mujeres
-
-
-        {# LEGALES 
-        {% if all[renderData.language].legales %}
-            <div>
-                {% for item in all[renderData.language].legales %}
-                    {% set activeClass = "__link-active" if page.url === "/" + item.url else "" %}
-                    <a class="link-arrow {{ activeClass }}" href="{{ item.link }}" rel="nofollow"><span>{{ item.title.rendered }}</span></a>
-                {% endfor %}
-            </div>
-        {% endif %} #}
+<Footer id="Footer" class="palette-primary">
+    <div>
+        <b>Emakumeen kaleak</b> Las calles de las mujeres
+    </div>
 </Footer>

@@ -22,6 +22,7 @@
 .widget-abc {
     color: var(--color);
     background-color: var(--bg);
+    margin-bottom: var(--padding-xxl);
     padding: var(--padding-top) var(--padding) var(--padding);
     overflow: hidden;
 }
@@ -63,8 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 var(--padding-mapa);
-    min-height: 100vh;
+    padding: var(--padding-xl) var(--padding-mapa);
 
     svg {
         fill: var(--color);
@@ -79,7 +79,7 @@
     grid-template-columns: repeat(var(--cols), 1fr);
     list-style: none;
     margin: 0;
-    padding: var(--padding-indice);
+    padding: var(--padding-indice); 
     column-gap: var(--padding-xxs);
     row-gap: var(--padding-l);
 

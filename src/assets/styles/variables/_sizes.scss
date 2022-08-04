@@ -2,6 +2,7 @@
 
 :root {
   --y-header: 0;
+  --padding-xxl: #{math.div(240px, 16px) * 1rem};
   --padding-xl: #{math.div(120px, 16px) * 1rem};
   --padding-l: #{math.div(60px, 16px) * 1rem};
   --padding-m: #{math.div(44px, 16px) * 1rem};

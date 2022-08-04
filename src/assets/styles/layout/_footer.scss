@@ -1,19 +1,27 @@
 #Footer {
-    --font-size: var(--font-size-m);
-    padding: var(--padding-s);
-    color: var(--primary-color);
-    background-color: var(--primary-bg);
+    --font-size: var(--font-size-base);
 
-    @media (max-width: $smartphone) {
-        padding: var(--padding-s) var(--padding-xs);
-    }
-}
-
-#Footer {
     @include font-serif-light();
+    
+    background-color: var(--primary-color);
+    bottom: 0;
+    color: var(--primary-bg);
     font-size: var(--font-size);
+    left: 0;
+    padding: var(--padding-xs) var(--padding-s);
+    position: fixed;
+    width: 100%;
+    
+    @media (max-width: $smartphone) {
+        padding: var(--padding-xs);
+    }
 
     b {
         @include font-serif-bold();
     }
 }
+
+
+//  --map-green:#178C75;
+//   --map-orange:#F95F5F;
+//   --map-purple:#C8BBFC;
