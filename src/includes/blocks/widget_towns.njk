@@ -1,22 +1,24 @@
 {% macro block(data) %}
     <section id="widget-towns" class="widget-towns palette-secondary">
         {% for item in towns %}
+            {% set count = 1 %}
             <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
                 <h3>
-                    <span>{{ item.town | safe }}</span>
+                    <span>{{ item.pueblo | safe }}</span>
                     <span>{{ item.show }} / {{ item.hide }}</span>
                 </h3>
                 <ul>
-                    {% for street in item.streets %}
+                    {% for street in item.streets_list %}
                         {% set text = street.text %}
                         {% if street.class == "hide" %}
                             <li class="{{ street.class }} size-{{ 10|random }}"></li>
                         {% else %}
                             <li class={{ street.class }}>
                                 <a href="{{ street.link }}" target="_blank" rel="nofollow">
-                                    <b>_{{ loop.index }}_</b>{{ street.text }}
+                                    <b>_{{ count }}_</b>{{ street.name }}
                                 </a>
                             </li>
+                            {% set count = count + 1 %}
                         {% endif %}
                     {% endfor %}
                 </ul>

@@ -40,7 +40,7 @@ async function getData(){
         town.streets_list = shufStrees;
     })
 
-    return data_i18n;
+    return data_i18n['es'];
 }
 
 module.exports = getData;

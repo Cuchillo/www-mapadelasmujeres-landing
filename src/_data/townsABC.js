@@ -14,7 +14,6 @@ async function getData(){
     const data_i18n = await acf_optionGetByLang(type);
 
     data_i18n['es'].map(town => {
-        console.log('Town', town.pueblo);
         const newLetter = town.pueblo.charAt(0).toUpperCase();
 
         if (letter !== newLetter) {
