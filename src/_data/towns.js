@@ -13,6 +13,37 @@ const getRandomWord = () => {
     return s;
 }
 
+// const separateStreets = (arr) => {
+//     console.log('Separate Streets');
+
+//     let isTogether = false;
+
+//     for (let index = 0; index < arr.length - 1; index++) {
+//         const st = arr[index];
+//         const next = arr[index + 1];
+
+//         if (st.class === 'show' && next.class === 'show') {
+//             isTogether = true;
+//             // console.log('-----------------------------------------');
+//             // console.log(st);
+//             // console.log(next);
+//             arr[index] = st;
+//             arr[index + 1] = arr[index + 2];
+//             arr[index + 2] = next;
+//             // console.log('---....---');
+            
+//             // console.log('1', arr[index])
+//             // console.log('2', arr[index + 1])
+//             // console.log('3', arr[index + 2])
+//             // console.log('-----------------------------------------');
+//             index++;
+//         }
+//     }
+
+//     if (isTogether) separateStreets(arr);
+//     else return arr;
+// }
+
 async function getData(){
     console.log("------ Fetching Towns options... ------");
 
@@ -20,38 +51,40 @@ async function getData(){
 
     data_i18n['es'].map(town => {
         const totalStreets = Math.ceil(town.streets_list.length / 4.6 * 100);
-        const hideStreets = totalStreets - town.streets_list.length;
+        const showStreets = town.streets_list.length;
+        let hideStreets = totalStreets - town.streets_list.length;
+        let tmp = [];
 
-        town['show'] = town.streets_list.length;
+        town['show'] = showStreets;
         town['hide'] = hideStreets;
 
-        for (let index = 0; index < town.streets_list.length; index++) {
+        for (let index = 0; index < showStreets; index++) {
             town.streets_list[index].class = 'show';
+
+            tmp.push(town.streets_list[index]);
+            tmp.push({
+                name: getRandomWord(),
+                class: 'hide'
+            });
+            tmp.push({
+                name: getRandomWord(),
+                class: 'hide'
+            });
+            tmp.push({
+                name: getRandomWord(),
+                class: 'hide'
+            });
+            hideStreets = hideStreets - 3;
         }
 
         for (let index = 0; index < hideStreets; index++) {
-            town.streets_list.push( {
+            tmp.push( {
                 name: getRandomWord(),
                 class: 'hide'
             });
         }
 
-        const shufStreets = town.streets_list.sort((a, b) => 0.5 - Math.random());
-
-        for (let index = 0; index < shufStreets.length - 1; index++) {
-            const st = shufStreets[index];
-            const next = shufStreets[index + 1];
-
-            console.log(st, next)
-            console.log(st.class, next.class)
-
-            if (st.class === 'show' && next.class === 'show') {
-                shufStreets[index + 1] = shufStreets[index + 2];
-                shufStreets[index + 2] = next;
-                index++;
-            }
-        }
-
+        const shufStreets = tmp.sort((a, b) => 0.5 - Math.random());
         town.streets_list = shufStreets;
     })
 
