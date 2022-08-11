@@ -1,20 +1,32 @@
-const towns = require('./towns.js');
-let letter = "A";
-let cont = 0;
-const abc = [{letter:letter, towns:[]}];
+const acf_optionGetByLang = require('../_helpers/acf_optionGetByLang.js');
+const type = "town";
 
-for(let i=0; i<towns.length; i++) {
-    const newTown = towns[i].town.trim();
-    const nStreets = towns[i].streets.filter(street => street.class === 'show').length;
-    const newLetter = newTown.charAt(0).toUpperCase();
+async function getData(){
+    console.log("------ Fetching Towns ABC options... ------");
 
-    if (letter != newLetter) {
-        letter = newLetter;
-        cont++;
-        abc.push({ letter: letter, towns: [] });
-    }
+    const abc = [{
+        letter: 'A',
+        towns: []
+    }];
+    let letter = 'A';
+    let cont = 0;
 
-    abc[cont].towns.push({ name: newTown, streets: nStreets });
+    const data_i18n = await acf_optionGetByLang(type);
+
+    data_i18n['es'].map(town => {
+        console.log('Town', town.pueblo);
+        const newLetter = town.pueblo.charAt(0).toUpperCase();
+
+        if (letter !== newLetter) {
+            letter = newLetter;
+            cont++;
+            abc.push({ letter: letter, towns: [] });
+        }
+
+        abc[cont].towns.push({ name: town.pueblo, streets: town.show });
+    })
+
+    return abc;
 }
 
-module.exports = abc;
+module.exports = getData;

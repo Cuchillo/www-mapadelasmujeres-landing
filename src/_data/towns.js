@@ -25,8 +25,15 @@ async function getData(){
         town['show'] = town.streets_list.length;
         town['hide'] = hideStreets;
 
+        for (let index = 0; index < town.streets_list.length; index++) {
+            town.streets_list[index].class = 'show';
+        }
+
         for (let index = 0; index < hideStreets; index++) {
-            town.streets_list.push( { name: getRandomWord() });
+            town.streets_list.push( {
+                name: getRandomWord(),
+                class: 'hide'
+            });
         }
 
         const shufStrees = town.streets_list.sort((a, b) => 0.5 - Math.random());
