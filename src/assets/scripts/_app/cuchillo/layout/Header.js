@@ -1,4 +1,3 @@
-import { isTouch } from '../core/Basics';
 import { GetBy } from '../core/Element';
 import EventDispatcher from '../core/EventDispatcher';
 import { gsap, Power3 } from 'gsap';
