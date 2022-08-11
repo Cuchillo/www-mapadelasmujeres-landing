@@ -2,7 +2,7 @@
     <section id="widget-towns" class="widget-towns palette-secondary">
         {% for item in towns %}
             {% set count = 1 %}
-            <div id="{{ item.town|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
+            <div id="{{ item.pueblo|slugify }}" class="widget-towns__town" scroll-item data-class="widget-town">
                 <h3>
                     <span>{{ item.pueblo | safe }}</span>
                     <span>{{ item.show }} / {{ item.hide }}</span>

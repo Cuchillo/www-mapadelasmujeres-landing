@@ -36,8 +36,23 @@ async function getData(){
             });
         }
 
-        const shufStrees = town.streets_list.sort((a, b) => 0.5 - Math.random());
-        town.streets_list = shufStrees;
+        const shufStreets = town.streets_list.sort((a, b) => 0.5 - Math.random());
+
+        for (let index = 0; index < shufStreets.length - 1; index++) {
+            const st = shufStreets[index];
+            const next = shufStreets[index + 1];
+
+            console.log(st, next)
+            console.log(st.class, next.class)
+
+            if (st.class === 'show' && next.class === 'show') {
+                shufStreets[index + 1] = shufStreets[index + 2];
+                shufStreets[index + 2] = next;
+                index++;
+            }
+        }
+
+        town.streets_list = shufStreets;
     })
 
     return data_i18n['es'];
