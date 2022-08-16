@@ -24,11 +24,11 @@ export default class Header extends _Header {
     }
   }
 
-  // static show(__call) {}
-  //static hide(__call) {}
-
   static resize () {
+    super.resize();
+
     this._offsetFrom = Header.offsetElement.offsetTop - window.innerHeight;
+    this.y = -this.height;
   }
 
   static loop () {
