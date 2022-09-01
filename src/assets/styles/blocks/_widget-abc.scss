@@ -103,6 +103,10 @@
             a {
                 @include basic-a();
                 color: var(--secondary-bg);
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

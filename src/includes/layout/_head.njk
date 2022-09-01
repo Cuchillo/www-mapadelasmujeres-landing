@@ -38,10 +38,10 @@
   {% include "layout/_favicons.njk" %}
 
   {# CSS #}
-  <link id="__appCSS" rel="preload" href="{% webpack 'main.css' %}" as="style"/>
+  <link id="__appCSS" rel="preload" href="..{% webpack 'main.css' %}" as="style"/>
 
   {# JS #}
-  <link id="__appJS" rel="preload" href="{% webpack 'main.js' %}" as="script"/>
+  <link id="__appJS" rel="preload" href="..{% webpack 'main.js' %}" as="script"/>
 
   {# FONTS #}
   {% include "layout/_fonts.njk" %}

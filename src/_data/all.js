@@ -24,9 +24,7 @@ async function getData(){
 
             data.map((item) => {
                 item.language = item.acf.language;
-                console.log(item.link)
-                item.link = getUrl(item.link);
-                
+                item.link = item.slug === 'home' && lang === locales.default ? '/index.html' : '/' + item.language + "/";
             });
 
             dataLang[type] = data;

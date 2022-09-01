@@ -84,8 +84,7 @@ export default class Main {
     ScrollTop.init();
 
     this.doCuchilloInfo();
-    this.setWorker();
-
+    
     // LOOP
     if (isDebug) {
       gsap.ticker.add(() => { Main.loopDebug(); });

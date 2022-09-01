@@ -10,7 +10,7 @@ module.exports = {
     image_twitter: "/assets/social/twitter-600x330.jpg",
     google_analytics_code: "",
     /* URL FRONT */
-    url: "https://www.mrcorrales.com",
+    url: "",
     /* URL BACK */
     dataUrl: "http://mapadelasmujeres.cuchillo.tools",
 };
