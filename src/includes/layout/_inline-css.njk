@@ -6,7 +6,7 @@
     pointer-events: none;
   }
 
-  {% for palette in colors[renderData.language] %}
+  {% for palette in colors["es"] %}
     .palette-{{ palette.name | split(" ","-") | lowercase }} {
       --primary-color: {{ palette.color }};
       --primary-bg: {{ palette.bg }};

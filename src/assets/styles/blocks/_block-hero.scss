@@ -20,6 +20,7 @@
     position: absolute;
     top: var(--padding);
     left: var(--padding);
+    text-transform: uppercase;
 
     h1 {
         @include font-serif-bold();

@@ -41,6 +41,7 @@ import WinSidemenu from "./windows/Sidemenu";
 import { isThisSecond } from "date-fns";
 import ScrollTop from "./modules/ScrollTop";
 import Header from "./layout/Header";
+import { GetBy } from "./_app/cuchillo/core/Element";
 
 export default class Main {
   static scrollbar;
@@ -61,6 +62,12 @@ export default class Main {
     Statics.init(); // Si estamos en debug pinta un FPS counter
     Interaction.init({ ajax: true }) // Posiciones del cursor (Movimiento, click...), Acciones links, drag...
     ControllerWindow.init(); // Control ventanas
+
+    Basics.hasCookies = false;
+    [...GetBy.selector("[data-cookiecategory='analytics']")].map(item=> {
+      Basics.hasCookies = true;
+    })
+    
 
     BG.init(CMS_COLORS); // Control de paletas y color de fondo de pantallas. Automatico si añadimos un data-palette='loquesea' en el div con data-page
     InterfaceCanvas.init(); // Canvas de interface, se usa con Cursor

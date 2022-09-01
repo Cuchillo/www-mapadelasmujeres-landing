@@ -1,6 +1,6 @@
 <script type="text/javascript">
   const CMS_COLORS = {
-    {% for palette in colors[renderData.language] %}
+    {% for palette in colors["es"] %}
       "{{ palette.name | split(' ','-') | lowercase }}": {
         hex: {{ palette.bg | split('#','0x')}},
         css: "{{ palette.bg }}",

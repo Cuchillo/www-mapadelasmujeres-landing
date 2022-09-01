@@ -23,8 +23,10 @@ async function getData(){
             const data = await fetchData(`${type}-${lang}`, `${endpoint}${type}?per_page=100${langUrl}&cachebuster=${new Date().getTime()}`);
 
             data.map((item) => {
-                item.language = getUrlLanguage(item.link);
-                item.link = item.slug === 'home' && lang === locales.default ? '/index.html' : getUrl(item.link);
+                item.language = item.acf.language;
+                console.log(item.link)
+                item.link = getUrl(item.link);
+                
             });
 
             dataLang[type] = data;
