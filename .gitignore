@@ -24,3 +24,4 @@ _material/
 
 # CMS cache
 src/_datacache
+*.zip
