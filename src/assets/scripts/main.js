@@ -92,7 +92,7 @@ export default class Main {
       gsap.ticker.add(() => { Main.loop(); });
     }
 
-    this.setupData();   
+    //this.setupData();   
   }
 
   static setup () {
