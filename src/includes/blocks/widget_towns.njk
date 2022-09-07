@@ -11,7 +11,7 @@
                     {% for street in item.streets_list %}
                         {% set text = street.text %}
                         {% if street.class == "hide" %}
-                           
+                            <!--<li class="{{ street.class }} size-{{ 10|random }}"></li>-->
                         {% else %}
                             <li class={{ street.class }}>
                                 <a href="{{ street.link }}" target="_blank" rel="nofollow">

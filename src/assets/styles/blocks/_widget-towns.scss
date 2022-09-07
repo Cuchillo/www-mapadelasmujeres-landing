@@ -9,6 +9,10 @@
     --font-size-title: var(--font-size-l);
     --font-size-number: var(--font-size-medium);
     --padding: var(--padding-s);
+
+    @media (max-width: $smartphone) {
+        --font-size-number: var(--font-size-s);
+    }
 }
 .widget-towns {
     color: var(--color);
@@ -36,6 +40,7 @@
         span:last-child {
             @include font-sans-medium();
             font-size: var(--font-size-number);
+            white-space: nowrap;
         }
     }
 
@@ -67,7 +72,6 @@
             &.show::before {
                 @include z-index(1);
                 background-color: var(--color);
-                content: '';
                 height: 100%;
                 left: 0;
                 position: absolute;

@@ -13,7 +13,7 @@ class ScrollItem__Town extends VScroll_Item {
   constructor(__link, __index, __scroller) {
     super(__link, __index, __scroller);
 
-    this._streets = GetBy.class('show', __link);
+    /*this._streets = GetBy.class('show', __link);
 
     this.onShow = () => {
       for (let index = 0; index < this._streets.length; index++) {
@@ -24,7 +24,7 @@ class ScrollItem__Town extends VScroll_Item {
       }
     };
     this.onHide = () => {};
-    this.onMove = () => {};
+    this.onMove = () => {};*/
   }
 }
 

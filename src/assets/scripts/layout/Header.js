@@ -4,6 +4,7 @@ import _Header from '../_app/cuchillo/layout/Header';
 import { Power3 } from "gsap";
 import { GetBy } from '../_app/cuchillo/core/Element';
 import { Scroll } from '../_app/cuchillo/scroll/Scroll';
+import { Metrics } from '../_app/cuchillo/core/Metrics';
 
 export default class Header extends _Header {
   static container = GetBy.id("Footer");
@@ -26,8 +27,8 @@ export default class Header extends _Header {
 
   static resize () {
     super.resize();
-
-    this._offsetFrom = Header.offsetElement.offsetTop - window.innerHeight;
+    if(Header.offsetElement)  this._offsetFrom = Header.offsetElement.offsetTop - window.innerHeight;
+    else this._offsetFrom = Metrics.HEIGHT - this._offsetFrom
     this.y = -this.height;
   }
 
