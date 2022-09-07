@@ -29,7 +29,7 @@ const Metrics = {
     });
 
     // Solucion moderna al cambio de orientación. No funciona en iOS
-    if (screen) screen.orientation.addEventListener('change', (e) => { location.reload(); })
+    //if (screen) screen.orientation.addEventListener('change', (e) => { location.reload(); })
   },
 
   update: function(){
